@@ -1,6 +1,16 @@
+import { format } from 'date-fns';
 import React from 'react'
 
-function WeightDetails({ grossWt, tareWt, netWt }) {
+function WeightDetails({ grossWt, tareWt, netWt, dateOne, dateTwo, timeOne, timeTwo }) {
+
+    let dateGross = new Date(`${dateOne}`)
+    let dateTare = new Date(`${dateTwo}`)
+
+    var formattedDateGross = format(dateGross, "d/MM/yyyy");
+    var formattedDateTare = format(dateTare, "d/MM/yyyy");
+
+    // console.log(formattedDateGross.toString())
+
     return (
         <section className="flex flex-row justify-between px-4 pr-96">
             <ul>
@@ -11,8 +21,8 @@ function WeightDetails({ grossWt, tareWt, netWt }) {
             </ul>
 
             <div>
-                <p>Date &nbsp;&nbsp;: 22/03/2024  Time: 20:53</p>
-                <p>Date &nbsp;&nbsp;: 22/03/2024  Time: 20:53M</p>
+                <p>Date &nbsp;&nbsp;: <span>{formattedDateGross.toString()}</span>  Time: <span>{timeOne}</span></p>
+                <p>Date &nbsp;&nbsp;: <span>{formattedDateTare.toString()}</span>  Time: <span>{timeTwo}</span>M</p>
             </div>
         </section>
     )

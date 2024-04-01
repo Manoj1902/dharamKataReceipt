@@ -19,6 +19,14 @@ function App() {
   const [netWt, setNetWt] = useState("")
 
 
+  const [dateOne, setDateOne] = useState("")
+  const [dateTwo, setDateTwo] = useState("")
+  const [timeOne, setTimeOne] = useState("")
+  const [timeTwo, setTimeTwo] = useState("")
+
+  const [charges, setCharges] = useState("")
+
+
 
   const handlePrint = () => {
     window.print()
@@ -50,12 +58,16 @@ function App() {
                   grossWt={grossWt}
                   tareWt={tareWt}
                   netWt={netWt}
+                  dateOne={dateOne}
+                  dateTwo={dateTwo}
+                  timeOne={timeOne}
+                  timeTwo={timeTwo}
                 />
 
 
                 <p className="text-center leading-[0.7rem]">-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
 
-                <Charges />
+                <Charges charges={charges} />
 
                 <p className="text-center leading-[0.7rem]">-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
 
@@ -89,13 +101,12 @@ function App() {
 
 
                 <div className="flex flex-row justify-between gap-10 px-5 items-center">
-                  <label htmlFor="serialno">Enter Party Name:</label>
+                  <label htmlFor="partyName">Enter Party Name:</label>
                   <input
                     className="uppercase px-3 w-[80%] bg-gray-200 rounded py-1"
                     type="text"
-                    max="20"
-                    name="text"
-                    id="serialno"
+                    name="partyName"
+                    id="partyName"
                     placeholder="Enter Party Name"
                     autoComplete="off"
                     value={partyName}
@@ -105,13 +116,12 @@ function App() {
 
 
                 <div className="flex flex-row justify-between gap-10 px-5 items-center">
-                  <label htmlFor="serialno">Enter Gate Pass:</label>
+                  <label htmlFor="gatePass">Enter Gate Pass:</label>
                   <input
                     className="px-3 w-[80%] bg-gray-200 rounded py-1"
                     type="text"
-                    max="20"
-                    name="text"
-                    id="serialno"
+                    name="gatePass"
+                    id="gatePass"
                     placeholder="Enter Gate Pass:"
                     autoComplete="off"
                     value={gatePass}
@@ -121,13 +131,12 @@ function App() {
 
 
                 <div className="flex flex-row justify-between gap-10 px-5 items-center">
-                  <label htmlFor="serialno">Enter Vehicle No:</label>
+                  <label htmlFor="vehicleNo">Enter Vehicle No:</label>
                   <input
                     className="px-3 w-[80%] bg-gray-200 rounded py-1"
                     type="text"
-                    max="20"
-                    name="text"
-                    id="serialno"
+                    name="vehicleNo"
+                    id="vehicleNo"
                     placeholder="Enter Vehicle No"
                     autoComplete="off"
                     value={vehicleNo}
@@ -137,13 +146,12 @@ function App() {
 
 
                 <div className="flex flex-row justify-between gap-10 px-5 items-center">
-                  <label htmlFor="serialno">Enter Material:</label>
+                  <label htmlFor="material">Enter Material:</label>
                   <input
                     className="px-3 w-[80%] bg-gray-200 rounded py-1"
                     type="text"
-                    max="20"
-                    name="text"
-                    id="serialno"
+                    name="material"
+                    id="material"
                     placeholder="Enter Material"
                     autoComplete="off"
                     value={matrial}
@@ -153,13 +161,12 @@ function App() {
 
                 {/* Weight Details */}
                 <div className="flex flex-row justify-between gap-10 px-5 items-center">
-                  <label htmlFor="serialno">Enter GROSS Wt:</label>
+                  <label htmlFor="grossWt">Enter GROSS Wt:</label>
                   <input
                     className="px-3 w-[80%] bg-gray-200 rounded py-1"
                     type="number"
-                    max="20"
-                    name="text"
-                    id="serialno"
+                    name="grossWt"
+                    id="grossWt"
                     placeholder="Enter GROSS Wt"
                     autoComplete="off"
                     value={grossWt}
@@ -169,13 +176,12 @@ function App() {
 
 
                 <div className="flex flex-row justify-between gap-10 px-5 items-center">
-                  <label htmlFor="serialno">Enter TARE Wt:</label>
+                  <label htmlFor="tareWt">Enter TARE Wt:</label>
                   <input
                     className="px-3 w-[80%] bg-gray-200 rounded py-1"
                     type="number"
-                    max="20"
-                    name="text"
-                    id="serialno"
+                    name="tareWt"
+                    id="tareWt"
                     placeholder="Enter TARE Wt"
                     autoComplete="off"
                     value={tareWt}
@@ -185,13 +191,12 @@ function App() {
 
 
                 <div className="flex flex-row justify-between gap-10 px-5 items-center">
-                  <label htmlFor="serialno">Enter NET Wt:</label>
+                  <label htmlFor="netWt">Enter NET Wt:</label>
                   <input
                     className="px-3 w-[80%] bg-gray-200 rounded py-1"
                     type="number"
-                    max="20"
-                    name="text"
-                    id="serialno"
+                    name="netWt"
+                    id="netWt"
                     placeholder="Enter NET wt"
                     autoComplete="off"
                     value={netWt}
@@ -201,20 +206,79 @@ function App() {
 
 
                 <div className="flex flex-row justify-between gap-10 px-5 items-center">
-                  <label htmlFor="serialno">Enter NET Wt:</label>
+                  <label htmlFor="grossWtDate">Enter Gross Wt Date:</label>
                   <input
                     className="px-3 w-[80%] bg-gray-200 rounded py-1"
-                    type="time"
-                    max="20"
-                    name="text"
-                    id="serialno"
-                    placeholder="Enter NET wt"
+                    type="date"
+                    name="grossWtDate"
+                    id="grossWtDate"
                     autoComplete="off"
-                    value={netWt}
-                    onChange={(e) => setNetWt(e.target.value)}
+                    value={dateOne}
+                    onChange={(e) => setDateOne(e.target.value)}
                     step="any"
                   />
                 </div>
+
+
+                <div className="flex flex-row justify-between gap-10 px-5 items-center">
+                  <label htmlFor="tareWtDate">Enter Tare Wt Date:</label>
+                  <input
+                    className="px-3 w-[80%] bg-gray-200 rounded py-1"
+                    type="date"
+                    name="tareWtDate"
+                    id="tareWtDate"
+                    autoComplete="off"
+                    value={dateTwo}
+                    onChange={(e) => setDateTwo(e.target.value)}
+                    step="any"
+                  />
+                </div>
+
+
+                <div className="flex flex-row justify-between gap-10 px-5 items-center">
+                  <label htmlFor="grossWtTime">Enter Gross Wt Time:</label>
+                  <input
+                    className="px-3 w-[80%] bg-gray-200 rounded py-1"
+                    type="time"
+                    name="grossWtTime"
+                    id="grossWtTime"
+                    autoComplete="off"
+                    value={timeOne}
+                    onChange={(e) => setTimeOne(e.target.value)}
+                    step="any"
+                  />
+                </div>
+
+
+                <div className="flex flex-row justify-between gap-10 px-5 items-center">
+                  <label htmlFor="tareWtTime">Enter Tare Wt Time:</label>
+                  <input
+                    className="px-3 w-[80%] bg-gray-200 rounded py-1"
+                    type="time"
+                    name="tareWtTime"
+                    id="tareWtTime"
+                    autoComplete="off"
+                    value={timeTwo}
+                    onChange={(e) => setTimeTwo(e.target.value)}
+                    step="any"
+                  />
+                </div>
+
+
+                <div className="flex flex-row justify-between gap-10 px-5 items-center">
+                  <label htmlFor="charges">Enter Charges:</label>
+                  <input
+                    className="px-3 w-[80%] bg-gray-200 rounded py-1"
+                    type="number"
+                    name="charges"
+                    id="charges"
+                    autoComplete="off"
+                    value={charges}
+                    onChange={(e) => setCharges(e.target.value)}
+                    step="any"
+                  />
+                </div>
+
 
 
                 <button onClick={() => setShowInvoice(true)} className="bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:text-blue-500 hover:bg-transparent transition-all duration-300">Preview Invoice</button>

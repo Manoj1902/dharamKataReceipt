@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Charges() {
+function Charges({ charges }) {
     return (
         <section className="px-4">
-            <p>Cherger(1) &nbsp;&nbsp;: Rs. 80</p>
+            <p>Charges(1) &nbsp;&nbsp;: Rs. <span>{charges}</span></p>
         </section>
     )
 }
