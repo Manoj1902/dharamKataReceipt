@@ -12,12 +12,12 @@ function WeightDetails({ grossWt, tareWt, netWt, dateOne, dateTwo, timeOne, time
     // console.log(formattedDateGross.toString())
 
     return (
-        <section className="flex flex-row justify-between px-4 pr-96">
+        <section className="flex flex-row justify-between px-4 pr-96 text-[21px] leading-6">
             <ul>
-                <li>GROSS Wt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span className="font-bold text-xl"><span>{grossWt}</span> kg</span></li>
-                <li>TARE Wt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span className="font-bold text-xl"><span>{tareWt}</span> kg</span></li>
-                <li>NET Wt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span className="font-bold text-xl"><span>{netWt}</span> kg</span></li>
-                <p>("M" - Means Wt. By Deiver)</p>
+                <li>GROSS Wt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span className="font-bold text-[30px]"><span>{grossWt}</span> kg</span></li>
+                <li>TARE Wt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span className="font-bold text-[30px]"><span>{tareWt}</span> kg</span></li>
+                <li>NET Wt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span className="font-bold text-[30px]"><span>{netWt}</span> kg</span></li>
+                <p>("M" - Means Wt. By Driver)</p>
             </ul>
 
             <div>
