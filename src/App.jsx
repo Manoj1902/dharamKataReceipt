@@ -8,7 +8,7 @@ import WeightDetails from "./components/WeightDetails"
 import Details from "./components/Details"
 import Header from "./components/Header"
 function App() {
-  const [showInvoice, setShowInvoice] = useState(false)
+  const [showInvoice, setShowInvoice] = useState(true)
 
   const [serialNo, setSerialNo] = useState("")
   const [partyName, setPartyName] = useState("")
@@ -19,6 +19,7 @@ function App() {
   const [grossWt, setGrossWt] = useState("")
   const [tareWt, setTareWt] = useState("")
   const [netWt, setNetWt] = useState("")
+  const [netWtInWords, setNetWtInWords] = useState("")
 
   // Current Date
   const currDate = new Date()
@@ -76,6 +77,7 @@ function App() {
                   grossWt={grossWt}
                   tareWt={tareWt}
                   netWt={netWt}
+                  netWtInWords={netWtInWords}
                   dateOne={dateOne}
                   dateTwo={dateTwo}
                   timeOne={timeOne}
@@ -233,6 +235,19 @@ function App() {
                   </div>
                 </article>
 
+                <div className="flex flex-col justify-between px-5">
+                  <label htmlFor="netWtWords">Enter NET Wt in Words:</label>
+                  <input
+                    className="px-3 w-[80%] bg-gray-200 rounded py-1"
+                    type="text"
+                    name="netWtWords"
+                    id="netWtWords"
+                    placeholder="Enter NET wt in Words"
+                    autoComplete="off"
+                    value={netWtInWords}
+                    onChange={(e) => setNetWtInWords(e.target.value)}
+                  />
+                </div>
 
                 <article className="md:grid grid-cols-2 gap-10">
 
